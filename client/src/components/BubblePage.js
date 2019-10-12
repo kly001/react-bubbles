@@ -13,7 +13,7 @@ const BubblePage = () => {
       .then(res => {
         setColorList(res.data)
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log("BubblePage:",error))
     }, [])
 
   return (

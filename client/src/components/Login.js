@@ -23,12 +23,12 @@ class Login extends React.Component {
   login = event => {
     event.preventDefault();
     axiosWithAuth()
-    .post("/login", this.state.creds)
+    .post("http://localhost:5000/api/login", this.state.creds)
     .then(res => {
         localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/colorList");
+        this.props.history.push("/protected");
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log("Login:",error));
   };
 
   render() {
