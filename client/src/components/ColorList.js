@@ -24,6 +24,7 @@ const ColorList = ({ colors, updateColors }) => {
      axiosWithAuth() 
       .put(`http://localhost:5000/api/colors/${colorToEdit.id}`,colorToEdit)
       .then(res => {
+        console.log("ColorList saveEdit res:", res)
         updateColors(colors.map(color =>{
           if(color.id===res.data.id) {
             return res.data
@@ -33,7 +34,7 @@ const ColorList = ({ colors, updateColors }) => {
         })
         )
       })
-      .catch(error => console.log("ColorList:", error))
+      .catch(error => console.log("ColorList error:", error))
   };
 
   const deleteColor = color => {
@@ -41,7 +42,7 @@ const ColorList = ({ colors, updateColors }) => {
     axiosWithAuth()
     .delete(`http://localhost:5000/api/colors/${colorToEdit}`)
     .then(res => {
-      console.log("ColorList res:",res)
+      console.log("ColorList delete res:",res)
     })
     .catch(error => console.log("ColorList error:", error))
   };
