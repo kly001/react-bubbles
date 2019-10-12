@@ -12,7 +12,7 @@ class Login extends React.Component {
   }
 
   handleChange = event => {
-    this.ListeningStateChangedEvent({
+    this.setState({
       creds: {
         ...this.state.creds,
         [event.target.name]:event.target.value
@@ -26,14 +26,14 @@ class Login extends React.Component {
     .post("/login", this.state.creds)
     .then(res => {
         localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/bubblepage");
+        this.props.history.push("/colorList");
       })
       .catch(error => console.log(error));
   };
 
   render() {
   return (
-    <>
+    <div className="login-form">
       <h1>Welcome to the Bubble App!</h1>
       <form onSubmit={this.login}>
           <input
@@ -52,7 +52,7 @@ class Login extends React.Component {
           />
           <button>Log in</button>
         </form>
-    </>
+    </div>
   );
 };
 }
