@@ -33,7 +33,7 @@ const ColorList = ({ colors, updateColors }) => {
         })
         )
       })
-      .catch(error => console.log("ColorList error:", error))
+      .catch(error => console.log("ColorList:", error))
   };
 
   const deleteColor = color => {
