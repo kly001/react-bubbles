@@ -20,7 +20,7 @@ const ColorList = ({ colors, updateColors }) => {
     e.preventDefault();
     // Make a put request to save your updated color
     // think about where will you get the id from...
-    // where is is saved right now?
+    // where is it saved right now?
      axiosWithAuth() 
       .put(`http://localhost:5000/api/colors/${colorToEdit.id}`,colorToEdit)
       .then(res => {
@@ -99,6 +99,24 @@ const ColorList = ({ colors, updateColors }) => {
       )}
       <div className="spacer" />
       {/* stretch - build another form here to add a color */}
+      {/* <form>
+        <input
+          type="text"
+          name="colorname"
+          placeholder="Color Name"
+        
+          />
+        <input
+          type="hexcode"
+          name="hexcode"
+          placeholder="Hex Code"
+      
+          />
+        <button >
+          Add New Color
+        </button>
+
+      </form> */}
     </div>
   );
 };

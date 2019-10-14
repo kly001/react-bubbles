@@ -59,6 +59,36 @@ body,
   border: 1px lightgray solid;
   margin-right: 36px;
 }
+.login-form{
+padding: 75px;
+margin-left: 300px;
+height: 370px;
+border: 3px solid gray;
+background: black;
+color: white;
+}
+.login-form h1 {
+  font-family: Modak;
+  font-size: 70px;
+  color: orangered;
+}
+.login-button{
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+  font-family: Modak;
+  font-size: 25px;
+}
+.login-button:hover {
+  background: orangered;
+}
+
+
+input{
+  width:350px;
+  height: 30px;
+  border-radius: 15px;
+}
 
 form {
   margin-top: 60px;
